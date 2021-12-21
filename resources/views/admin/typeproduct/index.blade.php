@@ -32,7 +32,7 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">หน้า Typeproduct</h6> <a href="{{route('addtypeproduct')}}" class="btn btn-success">เพิ่มข้อมูล</a>
+                  <h6 class="m-0 font-weight-bold text-primary">หน้า Typeproduct</h6> <a href="{{route('typeproduct.create')}}" class="btn btn-success">เพิ่มข้อมูล</a>
                 </div>
                 
                 <div class="table-responsive">
@@ -46,36 +46,20 @@
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach($type_products as $type)
                       <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td><a href="form_edit_typeproduct.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
+                        <td>{{ $type->id }}</td>
+                        <td>{{ $type->name }}</td>
+                        <td><a href="{{ route('typeproduct.edit', $type->id) }}" class="btn  btn-warning">แก้ไข</a></td>
+                        <td>
+                          <form action="{{ route('typeproduct.destroy', $type->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn  btn-danger">ลบ</a>
+                          </form>
+                        </td>
                       </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>                                          
-                        <td><a href="form_edit_typeproduct.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA8568</a></td>
-                        <td>Rivat Mahesa</td>                                         
-                        <td><a href="form_edit_typeproduct.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1453</a></td>
-                        <td>Indri Junanda</td>                                           
-                        <td><a href="form_edit_typeproduct.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1998</a></td>
-                        <td>Udin Cilok</td>
-                        <td><a href="form_edit_typeproduct.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

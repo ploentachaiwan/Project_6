@@ -36,14 +36,14 @@
 					</span>
 					
 
-					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
-						username
-						<input class="input100" type="text" name="username">
+					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username" >
+					<li style="color: white">username</li>
+						<input class="input100" type="text" name="username" >
 						<span class="focus-input100" data-placeholder=""></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						password
+						<li style="color: white">password</li>
 						<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder=""></span>
 					</div>
@@ -54,27 +54,8 @@
 						</button>
 					</div>
 
-					<ul class="login-more p-t-190">
-						<li class="m-b-8">
-							<span class="txt1">
-							ลืมรหัสผ่าน
-							</span>
+					
 
-							<a href="#" class="link-warning">
-								Username / Password?
-							</a>
-						</li>
-
-						<li>
-							<span class="txt1">
-								สมัคสมาชิก
-							</span>
-
-							<a href="#" class="link-danger">
-								Sign up
-							</a>
-						</li>
-					</ul>
 				</form>
 			</div>
 		</div>

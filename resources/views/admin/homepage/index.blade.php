@@ -27,7 +27,7 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">หน้า Homepage</h6> <a href="form_add_homepage.php" class="btn btn-success">เพิ่มข้อมูล</a>
+                  <h6 class="m-0 font-weight-bold text-primary">หน้า Homepage</h6> <a href="{{route('addhomepage')}}" class="btn btn-success">เพิ่มข้อมูล</a>
                 </div>
                 
                 <div class="table-responsive">
@@ -35,72 +35,37 @@
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
-                        <th>แบบทดสอบข้อมูล</th>
+                        <th>test</th>
                         <th>สินค้าแนะนำ</th>
                         <th>ชื่อสินค้า</th>
                         <th>รูปภาพ</th>
                         <th>ราคา</th>
-                        <th>ผู้สร้างเนื้อหา</th>
+                       
                         <th>แก้ไข</th>
                         <th>ลบ</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach ($homepage as $homepages )
+                          
+                     
                       <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td>250</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td><a href="form_edit_homepage.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
+                        <td><a href="#">{{$homepages->id}}</a></td>
+                        <td>{{$homepages->test}}</td>
+                        <td>{{$homepages->popular}}</td>                       
+                        <td>{{$homepages->name}}</td>                       
+                        <td>
+                          <img src="{{ $homepages->image }}"  width="50px" alt="">  
+                        </td>                       
+                        <td>{{$homepages->price}}</td>                       
+                                            
+                        <td><a href="{{url('admin/homepage/edit/'.$homepages->id)}}" class="btn  btn-warning">แก้ไข</a></td>
+                        <td><a href="{{route('homepage.destroy', ['id' => $homepages->id])}}" class="btn  btn-danger">ลบ</a></td>
                       </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>
-                        <td>Gundam 90'</td>                        
-                        <td>Gundam 90'</td>                        
-                        <td>Gundam 90'</td>                        
-                        <td>1,500</td>                        
-                        <td>Gundam 90'</td>                        
-                        <td><a href="form_edit_homepage.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA8568</a></td>
-                        <td>Rivat Mahesa</td>
-                        <td>Rivat Mahesa</td>
-                        <td>Rivat Mahesa</td>
-                        <td>Rivat Mahesa</td>
-                        <td>500</td>
-                        <td>Oblong T-Shirt</td>                       
-                        <td><a href="form_edit_homepage.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1453</a></td>
-                        <td>Indri Junanda</td>
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td>1,000</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td><a href="form_edit_homepage.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1998</a></td>
-                        <td>Udin Cilok</td>
-                        <td>Udin Cilok</td>
-                        <td>Udin Cilok</td>
-                        <td>Udin Cilok</td>
-                        <td>450</td>
-                        <td>Baby Powder</td>
-                        <td><a href="form_edit_homepage.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
+                     
+                     
+                      @endforeach
+                      
                     </tbody>
                   </table>
                 </div>

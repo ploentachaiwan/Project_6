@@ -42,6 +42,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
 }
 
 html {
@@ -72,7 +73,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: #5680b8;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -202,7 +203,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  -ms-overflow-style: scrollbar;
+  -ms-overflow-style: srollbar;
 }
 
 figure {

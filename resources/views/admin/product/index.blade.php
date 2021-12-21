@@ -37,67 +37,32 @@
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>ID</th>
-                        <th>รูปภาพ</th>
-                        <th>ชื่อ</th>
-                        <th>ราคา</th>
-                        <th>ผู้สร้างเนื้อหา</th>
-                        <th>ประเภทสินค้า</th>
-                        <th>แก้ไข</th>
-                        <th>ลบ</th>
+                        <th>id_product</th>
+                        <th>name</th>
+                        <th>price</th>
+                        <th>typeproduct_at</th>
+                        <th>image</th>
+                        <th>created_at</th>
+                        <th>updated_at</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach($product as $products)
                       <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td><a href="form_edit_product.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
+                        <td>{{$products->id_product}}</td>
+                        <td>{{$products->name}}</td>
+                        <td>{{$products->price}}</td>                       
+                        <td>{{$products->typeproduct_at}}</td>
+                        <td>
+                          <img src="{{asset('admin/images/'.$products->image)}}"  width="50px" alt="">
+                        </td>   
+                        <td>{{$products->created_at}}</td>      
+                        <td>{{$products->updated_at}}</td>   
+                          <td><a href="{{url('admin/product/edit/'.$products->id_product)}}" class="btn  btn-warning">แก้ไข</a>
+                            <a href="{{url('admin/product/delete/' .$products->id_product)}}" class="btn  btn-danger">ลบ</a></td>
                       </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>
-                        <td>Gundam 90' Edition</td>                        
-                        <td>Gundam 90' Edition</td>                        
-                        <td>Gundam 90' Edition</td>                        
-                        <td>Gundam 90' Edition</td>                        
-                        <td><a href="form_edit_product.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA8568</a></td>
-                        <td>Rivat Mahesa</td>
-                        <td>Oblong T-Shirt</td>                       
-                        <td>Oblong T-Shirt</td>                       
-                        <td>Oblong T-Shirt</td>                       
-                        <td>Oblong T-Shirt</td>                       
-                        <td><a href="form_edit_product.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1453</a></td>
-                        <td>Indri Junanda</td>
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td><a href="form_edit_product.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1998</a></td>
-                        <td>Udin Cilok</td>
-                        <td>Baby Powder</td>
-                        <td>Baby Powder</td>
-                        <td>Baby Powder</td>
-                        <td>Baby Powder</td>
-                        <td><a href="form_edit_product.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

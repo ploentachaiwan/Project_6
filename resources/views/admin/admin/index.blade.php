@@ -27,7 +27,7 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">หน้า Admin</h6> <a href="form_add_admin.php" class="btn btn-success">เพิ่มข้อมูล</a>
+                  <h6 class="m-0 font-weight-bold text-primary">หน้า Admin</h6> <a href="{{route('addadmin')}}" class="btn btn-success">เพิ่มข้อมูล</a>
                 </div>
                 
                 <div class="table-responsive">

@@ -1,16 +1,12 @@
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('admin/admin/index')}}">
         <div class="sidebar-brand-icon">
           <img src="">
         </div>
-        <div class="sidebar-brand-text mx-3">Phaisan Restaurant Website</div>
+        <div class="sidebar-brand-text mx-3" ahref=  >Phaisan Re"staurant Website</div> <a class="nav-link" href="{{route('admin.index')}}">
       </a>
       <hr class="sidebar-divider my-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{route('admin.index')}}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
+      
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Features
@@ -62,46 +58,29 @@
         </div>
       </li> -->
      
-      
-      <li class="nav-item">
-        <a class="nav-link"  href="{{route('admin.index')}}">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>หน้า Admin</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  href="{{route('background.index')}}">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>หน้า Background</span>
-        </a>
-      </li>
+  
       <li class="nav-item">
         <a class="nav-link" href="{{route('typeproduct.index')}}">
-          <i class="fas fa-fw fa-palette"></i>
+          <i class="fas fa-store"></i>
           <span>หน้า Typeproduct</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route('product.index')}}">
-          <i class="fas fa-fw fa-palette"></i>
+          <i class="fas fa-box-open"></i>
           <span>หน้า Product</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route('user.index')}}">
-          <i class="fas fa-fw fa-palette"></i>
+          <i class="far fa-user"></i>
           <span>หน้า User</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('contents.index')}}">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>หน้า Contents</span>
-        </a>
-      </li>
+    
       <li class="nav-item">
         <a class="nav-link" href="{{route('homepage.index')}}">
-          <i class="fas fa-fw fa-palette"></i>
+          <i class="fas fa-home"></i>
           <span>หน้า Homepage</span>
         </a>
       </li>

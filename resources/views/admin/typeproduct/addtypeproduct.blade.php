@@ -33,7 +33,7 @@
                   <h6 class="m-0 font-weight-bold text-primary">หน้า Typeproduct</h6>
                 </div>
                 <div class="card-body">
-                  <form action="{{route('addtypeproduct.create')}}" method="post" enctype="multipart/form-data">
+                  <form action="{{route('typeproduct.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                     <div class="form-group">
                     <div class="form-group">
@@ -43,7 +43,7 @@
                     </div>
                  
                     <button type="submit" class="btn btn-success">Submit</button>
-                    <a href="type_product.php" class="btn btn-primary">ย้อนกลับ</a>
+                    <a href="{{ route('typeproduct.index') }}" class="btn btn-primary">ย้อนกลับ</a>
                   </form>
                 </div>
               </div>

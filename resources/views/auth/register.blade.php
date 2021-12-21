@@ -15,7 +15,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
+                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username">
 
                                 @error('username')
                                     <span class="invalid-feedback" role="alert">
@@ -85,15 +85,10 @@
                         
 					<div class="container" style="text-align: center;">
 						<div class="">
-							<a href="{{url('/')}}">
-								<button class="btn btn-warning"  style="width: 40%;">
-									เข้าสู่ระบบ
+								<button type="submit" class="btn btn-warning"  style="width: 40%;">
+									สมัครสมาชิก
 								</button>
-							</a>
-							<a href="{{route('register')}}">
-								<button class="btn btn-warning" style="width: 40%;">
-									ลืมรหัสผ่าน
-								</button></a>
+							
                     </form>
                 </div>
             </div>

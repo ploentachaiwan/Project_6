@@ -28,7 +28,7 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">หน้า User</h6> <a href="form_add_user.php" class="btn btn-success">เพิ่มข้อมูล</a>
+                  <h6 class="m-0 font-weight-bold text-primary">หน้า User</h6> 
                 </div>
                 
                 <div class="table-responsive">
@@ -36,72 +36,29 @@
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
-                        <th>ชื่อ</th>
-                        <th>Email</th>
-                        <th>ชื่อผู้ใช้</th>
-                        <th>รหัสผ่าน</th>
-                        <th>ยืนยัน Email</th>
-                        <th>remember_token</th>
+                        <th>username</th>
+                        <th>name</th>
+                        <th>email </th>
+                        <th>	created_at</th>
+ 
                         <th>แก้ไข</th>
-                        <th>ลบ</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach ($user as $users)
                       <tr>
-                        <td><a href="#">RA0449</a></td>
-                        <td>Udin Wayang</td>
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td>Nasi Padang</td>                       
-                        <td><a href="form_edit_user.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
+                        <td>{{$users->id}}</td>
+                        <td>{{$users->username}}</td>
+                        <td>{{$users->name}}</td>                   
+                        <td>{{$users->email  }}</td>         
+                        <td>{{$users->	created_at}}</td>
+                                         
+                        <td><a href="{{url('admin/user/edituser/edit/'.$users->id)}}" class="btn  btn-warning">แก้ไข</a></td>
+                        
                       </tr>
-                      <tr>
-                        <td><a href="#">RA5324</a></td>
-                        <td>Jaenab Bajigur</td>
-                        <td>Gundam 90'</td>                        
-                        <td>Gundam 90' </td>                        
-                        <td>Gundam 90' </td>                        
-                        <td>Gundam 90' </td>                        
-                        <td>Gundam 90' </td>                        
-                        <td><a href="form_edit_user.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA8568</a></td>
-                        <td>Rivat Mahesa</td>
-                        <td>Oblong </td>                       
-                        <td>Oblong </td>                       
-                        <td>Oblong </td>                       
-                        <td>Oblong </td>                       
-                        <td>Oblong </td>                       
-                        <td><a href="form_edit_user.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1453</a></td>
-                        <td>Indri Junanda</td>
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td>Hat Rounded</td>                        
-                        <td><a href="form_edit_user.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">RA1998</a></td>
-                        <td>Udin Cilok</td>
-                        <td>Udin Cilok</td>
-                        <td>Udin Cilok</td>
-                        <td>Udin Cilok</td>
-                        <td>Udin Cilok</td>
-                        <td>Baby Powder</td>
-                        <td><a href="form_edit_user.php" class="btn  btn-warning">แก้ไข</a></td>
-                        <td><a href="#" class="btn  btn-danger">ลบ</a></td>
-                      </tr>
+                     
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

@@ -1,92 +1,574 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Phaisan Restaurant  Website</title>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+  <title>Phaisan Restaurant Website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+  <!-- Favicons -->
+  <link href="{{asset('Frontend/assets/img/p.png')}}" rel="icon">
+  <link href="{{asset('Frontend/assets/img/P.png')}}" rel="P.png">
 
-            .full-height {
-                height: 100vh;
-            }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
-            .position-ref {
-                position: relative;
-            }
+  <!-- Vendor CSS Files -->
+  <link href="{{asset('Frontend/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link href="{{asset('Frontend/assets/vendor/aos/aos.css" rel="stylesheet')}}">
+  <link href="{{asset('Frontend/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('Frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{asset('Frontend/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('Frontend/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{asset('Frontend/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+  <!-- Template Main CSS File -->
+  <link href="{{asset('Frontend/assets/css/style.css')}}" rel="stylesheet">
 
-            .content {
-                text-align: center;
-            }
+  <!-- =======================================================
+  * Template Name: Restaurantly - v3.3.0
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
 
-            .title {
-                font-size:px;
-            }
+<body>
 
-            .links > a {
-                color: #291a03;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-center justify-content-md-between">
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+      <div class="contact-info d-flex align-items-center">
+       
+        
+      </div>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+      <div class="languages d-none d-md-flex align-items-center">
+        
+      </div>
+    </div>
+  </div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Phaisan Restaurant  Website
-   
-                </div>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-                
+      <h1 class="logo me-auto me-lg-0"><a  href="#hero">Phaisan Restaurant Website</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a href="{{route('login')}}" class="book-a-table-btn scrollto d-none d-lg-flex">สมัครสมาชิก</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1><span>เว็บไซต์ร้านครัวไพศาล</span></h1>
+          <h2>Phaisan Restaurant Website</h2>
+
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">เมนูแนะนำ</a>
+          
+          </div>
+       
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="50">
+            <div class="about-img">
+              <img src="{{asset('Frontend/assets/img/j6/003.jpg')}}" alt="">
+            </div>
+
+                  </div>
+
+      </div>-->
+    </section><!-- End About Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h1><span>เมนูแนะนำ</span></h1>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+              <div class="box" data-aos="zoom-in" data-aos-delay="200">
+
+              <div class="gallery-item">
+                <a href="assets/img/j6/009.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                  <img src="{{asset('Frontend/assets/img/j6/009.jpg')}}" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+            
+          </div>
+     
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in" data-aos-delay="200">
+              <div class="gallery-item">
+                <a href="assets/img/j6/004.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                  <img src="{{asset('Frontend/assets/img/j6/004.jpg')}}" alt="" class="img-fluid">
+                </a>
+              </div>
+          </div>
+          
+        </div>
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="gallery-item">
+              <a href="assets/img/J_6/011.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                <img src="{{asset('Frontend/assets/img/j6/011.jpg')}}" alt="" class="img-fluid">
+              </a>
             </div>
         </div>
-    </body>
+        
+      </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <p>Menu</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="menu-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-starters">เมนูยอดนิยม</li>
+              <li data-filter=".filter-salads">เมนูอาหาร</li>
+              <li data-filter=".filter-specialty">น้ำดื่ม</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <a href="assets/img/J_6/006.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/006.jpg')}}" class="menu-img" alt=""> </a>
+            <div class="menu-content">
+              <a href="#">ผัดคะน้าหมูสับ ไข่ดาว</a><span>40 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+              ผักคะน้าก้านกรอบๆ หอมกลิ่นกระเทียมสับ รสชาตินัวจากเครื่องปรุงรส
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <a href="assets/img/J_6/012.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/012.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">คอหมูย่าง</a><span>50 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+              คอหมูย่างนุ่มๆ หอมๆน่าทาน
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <a href="assets/img/J_6/011.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/011.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">ทอดมันปลากราย</a><span>40 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+              ทอดมันปลากราย ร้อนๆน่าทาน
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <a href="assets/img/J_6/008.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/008.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">ผัดพริกอ่อน</a><span>40 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+              
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <a href="assets/img/J_6/010.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/010.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">ผัดเปรี้ยวหวาน</a><span>40 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+              มีรสชาติออกหวานอมเปรี้ยวที่ได้จากหัวหอมใหญ่ มะเขือเทศและสัปรส
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <a href="assets/img/J_6/013.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/013.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">น้ำตกหมู</a><span>50</span>
+            </div>
+            <div class="menu-ingredients">
+              
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <a href="assets/img/J_6/018.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/018.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">กระเพราทะเล</a><span>40 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+ 
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-salads">
+            <a href="assets/img/J_6/020.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/020.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">ข้าวไข่เจียว</a><span>40 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+          
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-specialty">
+            <a href="assets/img/J_6/203.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/203.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">น้ำแดง</a><span>15 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+            
+            </div>
+          </div>
+
+          <div class="col-lg-6 menu-item filter-specialty">
+            <a href="assets/img/J_6/202.jpg" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('Frontend/assets/img/j6/202.jpg')}}" class="menu-img" alt=""></a>
+            <div class="menu-content">
+              <a href="#">น้ำเขียว</a><span>15 บาท</span>
+            </div>
+            <div class="menu-ingredients">
+            
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Menu Section -->
+
+    <!-- ======= Specials Section ======= -->
+    <section id="specials" class="specials">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title text-center">
+          <p>อาหารไทย</p>
+        </div>
+  
+        <div class="section-title text-center">
+          <h3>ความเป็นมาของอาหารไทย</h3>
+        </div>
+          
+        <section id="why-us" class="why-us">
+          <div class="container" data-aos="fade-up">
+    
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                  <div class="box" data-aos="zoom-in" data-aos-delay="200">
+    
+                  <div class="gallery-item">
+                    <a href="assets/img/J_6/007.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                      <img src="{{asset('Frontend/assets/img/j6/007.jpg')}}" alt="" class="img-fluid">
+                    </a>
+                  </div>
+                </div>
+                
+              </div>
+         
+              <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="gallery-item">
+                    <a href="assets/img/J_6/014.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                      <img src="{{asset('Frontend/assets/img/j6/014.jpg')}}" alt="" class="img-fluid">
+                    </a>
+                  </div>
+              </div>
+              
+            </div>
+            <div class="col-lg-4 mt-4 mt-lg-0">
+              <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                <div class="gallery-item">
+                  <a href="assets/img/J_6/025.jpg" class="gallery-lightbox" data-gall="gallery-item">
+                    <img src="{{asset('Frontend/assets/img/j6/025.jpg')}}" alt="" class="img-fluid">
+                  </a>
+                </div>
+            </div>
+            
+          </div>
+    
+            </div>
+    
+          </div>
+        </section>
+
+            <div class=" text-center">
+                <div class="section-title text-center">
+                <h4>อาหารไทย เป็นอาหารประจำของชนชาติไทย ที่มีการสั่งสมและถ่ายทอดมาอย่างต่อเนื่องตั้งแต่อดีต 
+                  จนเป็นเอกลักษณ์ประจำชาติถือได้ว่าอาหารไทยเป็นวัฒนธรรมประจำชาติที่สำคัญของไทย ขณะที่อาหารพื้นบ้าน หมายถึง 
+                  อาหารที่นิยมรับประทานกันเฉพาะท้องถิ่น ซึ่งเป็นอาหารที่ทำขึ้นได้ง่าย โดยอาศัยพืชผักหรือเครื่องประกอบอาหารที่มีอยู่ในท้องถิ่นมีการสืบทอดวิธีปรุงและการรับประทานต่อๆ กันมา
+</h4></div>
+                  <div class="col-lg-8 details order-2 order-lg-1 text-center">
+                   </div>
+              
+                  </div>
+              
+                </div>
+             
+
+      </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+  
+        </div>
+      </div>
+    
+     
+
+     
+
+      
+          
+            <div class="container" data-aos="fade-up">
+              <div class="row mt-5">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="info-box mb-4">
+                      <i class=""></i>
+                      <h3>เจ้าของร้านครัวไพศาล</h3>
+                      <img src="{{asset('Frontend/assets/img/j6/107.jpg')}}" width="300px" class="testimonial-img" alt="">
+      
+                     
+                      <h3>คุณนกเอี้ยง ไชยวรรณ</h3>
+                   
+                    </div>
+                  </div>
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4></h4>
+                <p>47/1 หมู่ 6 ต.ไทรน้อย
+                  อ.ไทรน้อย จ.นนทบุรี
+                  บ่อทรายไทรน้อย</p>
+              </div>
+
+              <div class="open-hours">
+                <i class="bi bi-clock"></i>
+                <h4>Open Hours:</h4>
+                <p>
+                 Open every day :<br>
+                  07:00 AM - 20:00 PM
+                </p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>0869025005</p>
+              </div>
+
+            
+
+            </div>
+
+          </div>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3871.299200689382!2d100.33118451483327!3d14.000264990187025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDAwJzAxLjAiTiAxMDDCsDIwJzAwLjEiRQ!5e0!3m2!1sth!2sth!4v1630050634639!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+     
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+  <section id="chefs" class="chefs">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>ผู้จัดทำ</h2>
+        <p>ผู้จัดทำ</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="100">
+            <img src="{{asset('Frontend/assets/img/j6/105.jpg')}}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>นางสาวเพลินตา  ไชยวรรณ
+                </h4>
+                <span>Ms. Ploenta  chaiwan
+                </span>
+              </div>
+              <div class="social">
+               
+                <a href="https://web.facebook.com/profile.php?id=100027417814942" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="200">
+            <img src="{{asset('Frontend/assets/img/j6/101.jpg')}}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>นางสาวมนทิราพร  อนุมาศ
+                </h4>
+                <span>Ms. Monthiraporn  Anumas
+                </span>
+              </div>
+              <div class="social">
+               
+                <a href="https://web.facebook.com/profile.php?id=100011446845018"target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+           
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="300">
+            <img src="{{asset('Frontend/assets/img/j6/104.jpg')}}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>นายธนศักดิ์  เขจรลาภ
+                </h4>
+                <span>Mr. Thanasak  Khejornlap
+                </span>
+              </div>
+              <div class="social">
+               
+                <a href="https://web.facebook.com/profile.php?id=100014927537352s"target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Chefs Section -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Phaisan Restaurant Website</h3>
+              <p>
+                <strong>Phone:</strong> 
+                086 902 5005<br>
+                
+              </p>
+              <div class="social-links mt-3">
+               
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              
+        
+        
+          </div>
+
+        
+
+         
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        <strong><span>PHAISAN RESTAURANT WEBSITE</span></strong>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+       
+    </div>
+  </footer><!-- End Footer -->
+{{-- 
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> --}}
+
+  <!-- Vendor JS Files -->
+  <script src="{{asset('Frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('Frontend/assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{asset('Frontend/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{asset('Frontend/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{asset('Frontend/assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{asset('Frontend/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{asset('fontendassets/js/main.js')}}"></script>
+
+</body>
+
 </html>

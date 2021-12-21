@@ -4,13 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class product extends Model
+class Product extends Model
 {
-    protected $table = 'id_product';
-    protected $Fillable = [
-        'name',
-        'price',
-        'typeproduct_at',
-        'image'
-    ];
+    protected $primaryKey = 'id_product';
 }

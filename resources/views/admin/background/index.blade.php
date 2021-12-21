@@ -28,7 +28,7 @@
               <!-- Simple Tables -->
               <div class="card">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">หน้า Background</h6> <a href="form_add_background.php" class="btn btn-success">เพิ่มข้อมูล</a>
+                  <h6 class="m-0 font-weight-bold text-primary">หน้า Background</h6> <a href="{{route('addback')}}" class="btn btn-success">เพิ่มข้อมูล</a>
                 </div>
                 
                 <div class="table-responsive">
@@ -99,7 +99,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <button type="button" class="close" data-dismiss"modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>

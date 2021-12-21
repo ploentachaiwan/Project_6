@@ -16,7 +16,9 @@
                     <p><strong>Name :</strong> {{ Auth::user()->name }}</p>
                     <p><strong>Email :</strong> {{ Auth::user()->email }}</p>
         
+                    @if(auth()->user()->checkAdmin())
                     <a href="{{route('admin.index')}}" class="btn btn-primary">Product Management</a>
+                    @endif
                     <a href="" class="btn btn-success">Home</a>
                 </div>
             </div>
