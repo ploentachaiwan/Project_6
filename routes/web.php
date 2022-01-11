@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WelcomeController@index')->name('welcome');
 
-Route::middleware(['admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
 
     //admin
     Route::get('admin/admin/index', 'Admin\AdminController@index')->name('admin.index');

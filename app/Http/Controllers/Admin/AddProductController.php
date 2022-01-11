@@ -5,14 +5,17 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Typeproduct;
 use Image;
 use Illuminate\Support\Str;
 
 class AddProductController extends Controller
 {
     public function addproduct(){
-        return view('admin.product.addproduct');
+        $types = Typeproduct::all();
+        return view('admin.product.addproduct', compact('types'));
     }
+
     public function create(Request $request)
     {
         $validateData = $request->validate(

@@ -58,13 +58,16 @@
 
                     <div class="form-group">
                       <label for="typeproduct_at">typeproduct_at</label>
-                      <input type="text" class="form-control" name="typeproduct_at" id="typeproduct_at" aria-describedby="typeproduct_at" value="{{$product->typeproduct_at}}">                    
+                      <select name="typeproduct_at" class="form-control" id="">
+                        @foreach($types as $type)
+                        <option value="{{ $type->id }}" @if($product->typeproduct_at == $type->id) selected @endif>{{ $type->name }}</option>
+                        @endforeach
                     </div>
                     <div class="row mt-3">
                       @error('typeproduct_at')
                       <span class="text-danger">{{$message}}</span>
                       @enderror
-                  </div>
+                    </div>
 
                     <div class="form-group">
                       <label for="image">image</label>

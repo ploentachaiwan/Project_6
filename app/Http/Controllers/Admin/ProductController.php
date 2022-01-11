@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use File;
 use Image;
 use Illuminate\Support\Str;
+use App\Typeproduct;
 
 class ProductController extends Controller
 {
@@ -28,7 +29,8 @@ class ProductController extends Controller
     }
     public function edit($id_product){
         $product = Product::find($id_product);
-        return view('admin.product.editproduct', compact('product'));
+        $types = Typeproduct::all();
+        return view('admin.product.editproduct', compact('product', 'types'));
     }
 
     public function update(Request $request, $id_product){

@@ -41,7 +41,7 @@
 <body>
 
   <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
+  {{-- <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-center justify-content-md-between">
 
       <div class="contact-info d-flex align-items-center">
@@ -53,10 +53,10 @@
         
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-cente">
+  <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
       <h1 class="logo me-auto me-lg-0"><a  href="#hero">Phaisan Restaurant Website</a></h1>
@@ -159,135 +159,36 @@
     </section><!-- End Why Us Section -->
 
     <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu section-bg">
-      <div class="container" data-aos="fade-up">
+    <section id="product-content" id="menu" class="menu section-bg">
+      <div  class="container" data-aos="fade-up">
 
         <div class="section-title">
           <p>Menu</p>
         </div>
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="menu-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-starters">เมนูยอดนิยม</li>
-              <li data-filter=".filter-salads">เมนูอาหาร</li>
-              <li data-filter=".filter-specialty">น้ำดื่ม</li>
+              <a href="/#product-content"><li data-filter="*" class="filter-active">All</li></a>
+              @foreach($types as $type)
+              <a href="/?type={{ $type->id }}#product-content"><li data-filter=".filter-{{ $type->id }}">{{ $type->name }}</li></a>
+              @endforeach
             </ul>
           </div>
         </div>
 
-        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+        <div class="row menu-container">
 
-          <div class="col-lg-6 menu-item filter-starters">
-            <a href="assets/img/J_6/006.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/006.jpg')}}" class="menu-img" alt=""> </a>
+          @foreach($products as $product)
+          <div class="col-lg-6 menu-item filter-{{ $product->typeproduct_at }}">
+            <a href="{{asset('admin/images/'.$product->image)}}" class="gallery-lightbox" data-gall="gallery-item">
+            <img src="{{asset('admin/images/'.$product->image)}}" height="75px" class="menu-img" alt=""> 
+          </a>
             <div class="menu-content">
-              <a href="#">ผัดคะน้าหมูสับ ไข่ดาว</a><span>40 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-              ผักคะน้าก้านกรอบๆ หอมกลิ่นกระเทียมสับ รสชาตินัวจากเครื่องปรุงรส
+              <a href="#">{{ $product->name }}</a><span>{{ $product->price }} บาท</span>
             </div>
           </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <a href="assets/img/J_6/012.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/012.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">คอหมูย่าง</a><span>50 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-              คอหมูย่างนุ่มๆ หอมๆน่าทาน
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <a href="assets/img/J_6/011.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/011.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">ทอดมันปลากราย</a><span>40 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-              ทอดมันปลากราย ร้อนๆน่าทาน
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <a href="assets/img/J_6/008.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/008.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">ผัดพริกอ่อน</a><span>40 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-              
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <a href="assets/img/J_6/010.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/010.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">ผัดเปรี้ยวหวาน</a><span>40 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-              มีรสชาติออกหวานอมเปรี้ยวที่ได้จากหัวหอมใหญ่ มะเขือเทศและสัปรส
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-starters">
-            <a href="assets/img/J_6/013.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/013.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">น้ำตกหมู</a><span>50</span>
-            </div>
-            <div class="menu-ingredients">
-              
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <a href="assets/img/J_6/018.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/018.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">กระเพราทะเล</a><span>40 บาท</span>
-            </div>
-            <div class="menu-ingredients">
- 
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-salads">
-            <a href="assets/img/J_6/020.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/020.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">ข้าวไข่เจียว</a><span>40 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-          
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <a href="assets/img/J_6/203.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/203.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">น้ำแดง</a><span>15 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-            
-            </div>
-          </div>
-
-          <div class="col-lg-6 menu-item filter-specialty">
-            <a href="assets/img/J_6/202.jpg" class="gallery-lightbox" data-gall="gallery-item">
-            <img src="{{asset('Frontend/assets/img/j6/202.jpg')}}" class="menu-img" alt=""></a>
-            <div class="menu-content">
-              <a href="#">น้ำเขียว</a><span>15 บาท</span>
-            </div>
-            <div class="menu-ingredients">
-            
-            </div>
-          </div>
+          @endforeach
         </div>
 
       </div>

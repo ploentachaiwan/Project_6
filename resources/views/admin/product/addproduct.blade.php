@@ -57,8 +57,13 @@
                   </div>
 
                     <div class="form-group">
-                      <label for="typeproduct_at">typeproduct_at</label>
-                      <input type="text" class="form-control" name="typeproduct_at" id="typeproduct_at" aria-describedby="typeproduct_at" placeholder="typeproduct_at">                    
+                      <label for="typeproduct_at">typeproduct</label>
+                      <select name="typeproduct_at" class="form-control" id="">
+                        @foreach($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                      </select>
+                                
                     </div>
                     <div class="row mt-3">
                       @error('typeproduct_at')
