@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Phaisan Restaurant Website</title>
+  <title>Phaisan Cookhouse  Website</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -59,7 +59,7 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-      <h1 class="logo me-auto me-lg-0"><a  href="#hero">Phaisan Restaurant Website</a></h1>
+      <h1 class="logo me-auto me-lg-0"><a  href="#hero">Phaisan Cookhouse  Website</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -82,7 +82,7 @@
       <div class="row">
         <div class="col-lg-8">
           <h1><span>เว็บไซต์ร้านครัวไพศาล</span></h1>
-          <h2>Phaisan Restaurant Website</h2>
+          <h2>Phaisan Cookhouse  Website</h2>
 
           <div class="btns">
             <a href="#menu" class="btn-menu animated fadeInUp scrollto">เมนูแนะนำ</a>
